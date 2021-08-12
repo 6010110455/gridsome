@@ -1,10 +1,10 @@
 <template>
   <Layout>
     <div class="flex rounded-lg space-x-2 ">
-      <g-link to="/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg ring-4 ring-blue-500">
+      <g-link to="/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg ">
         <button class=" hover:underline  cursor-pointer">แสดงทั้งหมด</button>
       </g-link>  
-      <g-link to="/shirts/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg">
+      <g-link to="/shirts/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg ring-blue-500 ring-4">
         <button class=" hover:underline  cursor-pointer">เสื้อ</button>
       </g-link>
       <g-link to="/pants/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg">
@@ -16,7 +16,7 @@
       
     </div>
   <div class="flex">
-    <div v-if="$page.gcms.products" class="product-grid">
+    <div v-if="$page.gcms.products" class="product-grid" >
       <div
         v-for="(product) in products"
         :key="product.id"
@@ -44,17 +44,19 @@ export default {
 
   data() {
     return {
-      products: [{
-        name: '',
-        description: '',
-        price: '',
-        images: [{
-          url: ''
-        }],
-        categories: [{
+      category: [{
+        products: [{
           name: '',
-        }]
-      }],
+          description: '',
+          price: '',
+          images: [{
+            url: ''
+          }],
+          categories: [{
+            name: '',
+          }]
+        }],
+      }]
     }
   },
  
@@ -70,19 +72,24 @@ export default {
 
   {
     gcms{
-      products {
+      category(where: {id: "ckdu44h8o0gxf01040t0n96aq"}) {
         id
         name
-        description
-        price
-        images {
-          url
-        }
-        categories{
+        products {
+          id
           name
+          description
+          price
+          images {
+            url
+          }
+          categories{
+            name
+          }
+          slug
         }
-        slug
-      }
+    }
+  }
     }
   }
 

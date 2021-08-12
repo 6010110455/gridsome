@@ -1,7 +1,9 @@
 const c1 = () => import(/* webpackChunkName: "page--src-templates-product-vue" */ "C:\\Users\\User\\Desktop\\my_dev\\gridsome\\src\\templates\\Product.vue")
-const c2 = () => import(/* webpackChunkName: "page--src-pages-about-vue" */ "C:\\Users\\User\\Desktop\\my_dev\\gridsome\\src\\pages\\About.vue")
-const c3 = () => import(/* webpackChunkName: "page--node-modules-gridsome-app-pages-404-vue" */ "C:\\Users\\User\\Desktop\\my_dev\\gridsome\\node_modules\\gridsome\\app\\pages\\404.vue")
-const c4 = () => import(/* webpackChunkName: "page--src-pages-index-vue" */ "C:\\Users\\User\\Desktop\\my_dev\\gridsome\\src\\pages\\Index.vue")
+const c2 = () => import(/* webpackChunkName: "page--src-pages-shirts-vue" */ "C:\\Users\\User\\Desktop\\my_dev\\gridsome\\src\\pages\\Shirts.vue")
+const c3 = () => import(/* webpackChunkName: "page--src-pages-pants-vue" */ "C:\\Users\\User\\Desktop\\my_dev\\gridsome\\src\\pages\\Pants.vue")
+const c4 = () => import(/* webpackChunkName: "page--src-pages-accessories-vue" */ "C:\\Users\\User\\Desktop\\my_dev\\gridsome\\src\\pages\\Accessories.vue")
+const c5 = () => import(/* webpackChunkName: "page--node-modules-gridsome-app-pages-404-vue" */ "C:\\Users\\User\\Desktop\\my_dev\\gridsome\\node_modules\\gridsome\\app\\pages\\404.vue")
+const c6 = () => import(/* webpackChunkName: "page--src-pages-index-vue" */ "C:\\Users\\User\\Desktop\\my_dev\\gridsome\\src\\pages\\Index.vue")
 
 export default [
   {
@@ -33,22 +35,34 @@ export default [
     component: c1
   },
   {
-    path: "/about/",
+    path: "/product/cks8p0ze0282k0b85wh55yyz5/",
+    component: c1
+  },
+  {
+    path: "/shirts/",
     component: c2
+  },
+  {
+    path: "/pants/",
+    component: c3
+  },
+  {
+    path: "/accessories/",
+    component: c4
   },
   {
     name: "404",
     path: "/404/",
-    component: c3
+    component: c5
   },
   {
     name: "home",
     path: "/",
-    component: c4
+    component: c6
   },
   {
     name: "*",
     path: "*",
-    component: c3
+    component: c5
   }
 ]

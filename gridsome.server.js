@@ -17,6 +17,16 @@ module.exports = function(api) {
       }
     `);
 
+    const { data } = await graphql(`
+      {
+        gcms {
+          catagory {
+            id
+          }
+        }
+      }
+    `);
+
     data.gcms.products.forEach(node => {
       createPage({
         path: `/product/${node.id}`,

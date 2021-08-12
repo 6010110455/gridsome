@@ -1,13 +1,13 @@
 <template>
   <Layout>
     <div class="flex rounded-lg space-x-2 ">
-      <g-link to="/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg ring-4 ring-blue-500">
+      <g-link to="/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg ">
         <button class=" hover:underline  cursor-pointer">แสดงทั้งหมด</button>
       </g-link>  
       <g-link to="/shirts/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg">
         <button class=" hover:underline  cursor-pointer">เสื้อ</button>
       </g-link>
-      <g-link to="/pants/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg">
+      <g-link to="/pants/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg ring-blue-500 ring-4">
         <button class=" hover:underline  cursor-pointer">กางเกง</button>
       </g-link>
       <g-link to="/accessories/"  class="text-xl text-white w-full text-center bg-gray-600 p-3 rounded-lg">

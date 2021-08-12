@@ -1,15 +1,19 @@
 <template>
     <Layout>
-        <div v-if="this.$page.gcms.product" class="product_layout" >
+        <div v-if="this.$page.gcms.product" class="bg-gray-200 p-10 rounded-lg md:flex divide-x-2" >
             <div> 
-              <g-image :src="product.images[0].url" class="img" alt="new image" />    
+              <g-image :src="product.images[0].url" class="" alt="new image" />    
             </div>
-            <div>
-                <h1> {{ product.name }} </h1>
-                <p > {{ product.description }} </p>
-                <p>
-                    ${{ product.price}}
+            <div class="">
+                <div class="text-6xl">
+                    <h1> {{ product.name }} </h1>
+                </div>
+                <p class="text-red-500 pt-2 pb-10">
+                   ราคา {{ product.price}} บาท
                 </p>
+                <p > {{ product.description }} </p>
+                <p class="text-gray-500 pt-5">หมวดหมู่ {{ product.categories[0].name }} </p>
+                
             </div>
             
         </div>
@@ -25,6 +29,10 @@ export default {
                 description: '',
                 images: [{
                     url: ''
+                }],
+                categories: [{
+                    id: '',
+                    name: ''
                 }]
 
             }
@@ -49,18 +57,11 @@ query GetProduct($id: ID) {
             images{
                 url
             }
+            categories {
+                id
+                name
+            }
         }
     }
 }
 </page-query>
-
-<style scoped>
-    .img{
-        width: 300px;
-    }
-    .product_layout{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 2rem;
-    }
-</style>
