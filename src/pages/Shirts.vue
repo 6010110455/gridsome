@@ -72,26 +72,22 @@ export default {
 
   {
     gcms{
-      category(where: {id: "ckdu44h8o0gxf01040t0n96aq"}) {
+      products {
         id
         name
-        products {
-          id
-          name
-          description
-          price
-          images {
-            url
-          }
-          categories{
-            name
-          }
-          slug
+        description
+        price
+        images {
+          url
         }
+        categories{
+          name
+        }
+        slug
+      }
     }
   }
-    }
-  }
+  
 
 </page-query>
 
