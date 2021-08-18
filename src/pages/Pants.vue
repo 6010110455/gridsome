@@ -16,9 +16,9 @@
       
     </div>
   <div class="flex">
-    <div v-if="$page.gcms.products" class="product-grid">
+    <div v-if="$page.gcms.category" class="product-grid" >
       <div
-        v-for="(product) in products"
+        v-for="(product) in category.products"
         :key="product.id"
         class="flex-col"
       >
@@ -28,7 +28,7 @@
            <div class="product-content">
           <p class="product-name"> {{ product.name }}</p>
           <p class="product-price">{{ product.price}} บาท</p>
-          <p class="product-category pt-2">({{ product.categories[0].name}})</p>
+          <p class="product-category pt-2 hover:text-white">({{ category.name}})</p>
         </div>    
         </div>
        
@@ -44,22 +44,24 @@ export default {
 
   data() {
     return {
-      products: [{
-        name: '',
-        description: '',
-        price: '',
-        images: [{
-          url: ''
-        }],
-        categories: [{
+      category: [{
+        products: [{
           name: '',
-        }]
-      }],
+          description: '',
+          price: '',
+          images: [{
+            url: ''
+          }],
+          categories: [{
+            name: '',
+          }]
+        }],
+      }]
     }
   },
  
  created(){
-  this.products = this.$page.gcms.products
+  this.category = this.$page.gcms.category
  },
  
  
@@ -70,21 +72,21 @@ export default {
 
   {
     gcms{
-      products {
+      category(where: {id: "ckdu45xpk0gy60158mki7s6gs"}) {
         id
         name
-        description
-        price
-        images {
-          url
-        }
-        categories{
+        products {
+          images {
+            url
+          }
           name
+          price
+          id
         }
-        slug
       }
     }
   }
+  
 
 </page-query>
 

@@ -16,6 +16,7 @@ module.exports = function(api) {
         }
       }
     `);
+    
     data.gcms.products.forEach(node => {
       createPage({
         path: `/product/${node.id}`,

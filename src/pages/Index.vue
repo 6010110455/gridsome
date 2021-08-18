@@ -28,7 +28,7 @@
            <div class="product-content">
           <p class="product-name"> {{ product.name }}</p>
           <p class="product-price">{{ product.price}} บาท</p>
-          <p class="product-category pt-2">({{ product.categories[0].name}})</p>
+          <p class="product-category pt-2 hover:text-white">({{ product.categories[0].name}})</p>
         </div>    
         </div>
        
